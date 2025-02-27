@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-i9galxjfbxxdmv%l4rya)c!pzix5l^$pegt&+^hmtez+@i9e)i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [insta-pawa.onrender.com, "127.0.0.1"]
+ALLOWED_HOSTS = ["insta-pawa.onrender.com", "127.0.0.1"]
 
 
 # Application definition
