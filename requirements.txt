@@ -11,4 +11,5 @@ pillow==9.5.0  # For handling images
 pydub==0.25.1  # For audio processing
 moviepy==1.0.3  # If handling videos
 nltk==3.9.1
+beautifulsoup4==4.10.0
 
