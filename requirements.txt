@@ -5,7 +5,6 @@ alabaster==0.7.12
 annotated-types==0.7.0
 anyio==4.7.0
 appdirs==1.4.4
-arandr==0.1.10
 arpm==2.3.3
 asgiref==3.8.1
 async-timeout==5.0.1
