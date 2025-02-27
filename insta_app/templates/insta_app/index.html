@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Story</title>
+    <script>
+        async function generateStory() {
+            let url = document.getElementById("article_url").value;
+            let wordLimit = document.getElementById("word_limit").value;
+            let resultDiv = document.getElementById("result");
+            let loadingMessage = document.getElementById("loading");
+
+            if (!url) {
+                alert("Please enter an article URL");
+                return;
+            }
+
+            // Show loading message
+            loadingMessage.style.display = "block";
+            resultDiv.innerHTML = "";  // Clear previous results
+
+            let response = await fetch("/fetch-story/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ url: url, num_of_words: wordLimit })
+            });
+
+            let data = await response.json();
+            loadingMessage.style.display = "none";  // Hide loading message
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+            } else {
+                resultDiv.innerHTML = `<h3>${data.title}</h3><p>${data.summary}</p>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Generate Story from Article</h1>
+    <label>Article URL:</label>
+    <input type="text" id="article_url" placeholder="Enter URL"><br>
+
+    <label>Word Limit:</label>
+    <input type="number" id="word_limit" value="100"><br>
+
+    <button onclick="generateStory()">Generate Story</button>
+    
+    <p id="loading" style="display: none; color: blue;">Generating story... Please wait.</p>
+    
+    <div id="result"></div>
+</body>
+</html>

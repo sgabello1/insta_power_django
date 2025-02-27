@@ -469,9 +469,9 @@ def story_from_article(url,number):
             f"Article content:\n{article_text}"
             f"**Find me:why is this article interesting?Identify key elements that evoke emotions and make the reader engaged.Why should the reader care?**\n"
             f"**Add some shocking fact based on the data from the same article or drama to make the story more interesting and gripping. Underline how the proposed solution make it as an improvement to the problem you just stated**\n"
-            f"Deliver a concise but powerful summary, written with very easy words, stating the problem first and then the solution, in max {number} words of the article written with the sytle of the famous copywriter Tim Denning.\n\n"
-            f"Provide a well-researched list of at least 29 hashtags to maximize reach. Write them one after the other dont add numbers or lists.\n\n"
-            f"Now keep only the last two answers combined and add at end the sentence FOLLOW ME FOR INCREDIBLE CHINA.ROBOTICS!!!"            
+            f"Deliver a concise but powerful summary, written with very easy words, stating the problem first and then the solution, in max {number} words of the article written with the sytle of the famous copywriter Tim Denning.\n\n. This part of text is called 'SUMMARY'"
+            f"Provide a well-researched list of at least 20 hashtags to maximize reach. Write them one after the other dont add numbers or lists. This part of text is called 'HASHTAGS'\n\n"
+            f"Now put all togehter. Start with SUMMARY then you add one return character \n then the HASHTAGS another return character \n. Now you end with the sentence, also separated by return character'\n\n FOLLOW ME FOR INCREDIBLE CHINA.ROBOTICS!!!\n\n'. Dont display the words SUMMARY and HASHTAGS, make sure these 3 parts are spaced with return characters!"            
         )
     
         try:
